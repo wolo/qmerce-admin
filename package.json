@@ -1,0 +1,27 @@
+{
+  "name": "qmerce-admin",
+  "version": "0.1.0",
+  "description": "Qmerce Admin API",
+  "main": "admin.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolo/qmerce-admin.git"
+  },
+  "keywords": [
+    "qmerce"
+  ],
+  "author": "Wolfgang Loch <wolo@wolosoft.com> (http://www.wolosoft.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wolo/qmerce-admin/issues"
+  },
+  "homepage": "https://github.com/wolo/qmerce-admin#readme",
+  "dependencies": {
+    "request": "^2.71.0",
+    "querystring": "*"
+  },
+  "devDependencies": {
+  }
+}
