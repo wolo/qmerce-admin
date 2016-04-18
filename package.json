@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/wolo/qmerce-admin#readme",
   "dependencies": {
-    "request": "^2.71.0",
+    "qmerce-rest": "*",
     "querystring": "*"
   },
   "devDependencies": {
