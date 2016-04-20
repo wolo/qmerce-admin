@@ -1,6 +1,6 @@
 {
   "name": "qmerce-admin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Qmerce Admin API",
   "main": "admin.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/wolo/qmerce-admin#readme",
   "dependencies": {
-    "qmerce-rest": "https://github.com/wolo/qmerce-rest.git",
+    "qmerce-rest": "^0.1.1",
     "querystring": "*"
   },
   "devDependencies": {
