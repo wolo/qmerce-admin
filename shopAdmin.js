@@ -4,6 +4,7 @@ const querystring = require("querystring");
 const AdninJob = require("./job.js");
 const AdminProduct = require("./product.js");
 const AdminInterfaceConfig = require("./interfaceConfig.js");
+const AdminService = require("./service.js");
 
 module.exports = function(apiUrl, basicAuth) {
 	const server = JsonRestApi(apiUrl, basicAuth);
@@ -16,6 +17,7 @@ module.exports = function(apiUrl, basicAuth) {
 		searchProducts: (options) => server.getAsync("/search/product?"+querystring.stringify(options)),
 		
 		interfaceConfig: (interfaceId) => new AdminInterfaceConfig(interfaceId, server),
+		service: (id) => new AdminService(id, server),
 		
 		job: (id) => new AdninJob(id, server),
 		getJobs: () => server.getAsync("/jobs")
