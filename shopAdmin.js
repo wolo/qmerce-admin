@@ -5,6 +5,7 @@ const AdninJob = require("./job.js");
 const AdminProduct = require("./product.js");
 const AdminInterfaceConfig = require("./interfaceConfig.js");
 const AdminService = require("./service.js");
+const ContentAttribute = require("./contentAttribute.js");
 
 module.exports = function(apiUrl, basicAuth) {
 	const server = JsonRestApi(apiUrl, basicAuth);
@@ -20,6 +21,10 @@ module.exports = function(apiUrl, basicAuth) {
 		service: (id) => new AdminService(id, server),
 		
 		job: (id) => new AdninJob(id, server),
-		getJobs: () => server.getAsync("/jobs")
+		getJobs: () => server.getAsync("/jobs"),
+		
+		contentAttribute: (id) => new ContentAttribute(id, server),
+		getContentAttibutes: () => server.getAsync("/contentAttributes"),
+		createContentAttribute: (data) => server.postAsync("/contentAttributes", data),
 	}
 };

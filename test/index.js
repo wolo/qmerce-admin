@@ -29,3 +29,21 @@ describe('service methods', function() {
     });
   }
 });
+
+describe('contentAttribute methods', function() {
+  const product = shop.contentAttribute("attributeId");
+  for(let method of 'get|update|delete|value|createValue'.split('|')) {
+    it(method + ' exists', function() {
+      product.should.have.property(method);
+    });
+  }
+});
+
+describe('contentAttributeValue methods', function() {
+  const product = shop.contentAttribute("attributeId").value('valueId');
+  for(let method of 'get|update|delete'.split('|')) {
+    it(method + ' exists', function() {
+      product.should.have.property(method);
+    });
+  }
+});
