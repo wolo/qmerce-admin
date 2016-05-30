@@ -1,7 +1,8 @@
 "use strict";
 const should = require('chai').should();
-const admin = require('../admin');
-const shop = admin("url", {"user": "user", "password": "password"}).shop("contextId");
+const admin = require('../admin')("url", {"user": "user", "password": "password"});
+const shop = admin.shop("contextId");
+const global = admin.global();
 
 describe('job methods', function() {
   const job = shop.job("jobId");
@@ -44,6 +45,23 @@ describe('contentAttributeValue methods', function() {
   for(let method of 'get|update|delete'.split('|')) {
     it(method + ' exists', function() {
       product.should.have.property(method);
+    });
+  }
+});
+
+describe('global methods', function() {
+  for(let method of 'job|getJobs|createJob'.split('|')) {
+    it(method + ' exists', function() {
+      global.should.have.property(method);
+    });
+  }
+});
+
+describe('global job methods', function() {
+  const job = global.job("jobId");
+  for(let method of 'get|update|delete|run|cancel|getHistory'.split('|')) {
+    it(method + ' exists', function() {
+      job.should.have.property(method);
     });
   }
 });

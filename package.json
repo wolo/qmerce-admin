@@ -1,6 +1,6 @@
 {
   "name": "qmerce-admin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Qmerce Admin API",
   "main": "admin.js",
   "scripts": {

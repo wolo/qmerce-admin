@@ -1,7 +1,7 @@
 "use strict";
 const JsonRestApi = require("qmerce-rest");
 const querystring = require("querystring");
-const AdninJob = require("./job.js");
+const AdminJob = require("./job.js");
 const AdminProduct = require("./product.js");
 const AdminInterfaceConfig = require("./interfaceConfig.js");
 const AdminService = require("./service.js");
@@ -20,8 +20,9 @@ module.exports = function(apiUrl, basicAuth) {
 		interfaceConfig: (interfaceId) => new AdminInterfaceConfig(interfaceId, server),
 		service: (id) => new AdminService(id, server),
 		
-		job: (id) => new AdninJob(id, server),
+		job: (id) => new AdminJob(id, server),
 		getJobs: () => server.getAsync("/jobs"),
+		createJob: (data) => server.postAsync("/jobs", data),
 		
 		contentAttribute: (id) => new ContentAttribute(id, server),
 		getContentAttibutes: () => server.getAsync("/contentAttributes"),
